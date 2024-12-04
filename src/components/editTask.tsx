@@ -23,6 +23,7 @@ const EditTask = ({
   taskName,
   setTaskName,
 }: Edittask) => {
+  console.log(editTasksValue);
   return (
     <div className="h-[100%]">
       <div className="bg-[#3556AB] p-10 flex gap-4 text-white font-medium text-[24px] items-center justify-center custom-shadow   h-[150px] inner-shadow-black">

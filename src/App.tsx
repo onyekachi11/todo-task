@@ -42,7 +42,7 @@ function App() {
       name: "",
       checked: false,
     });
-    setTaskName("");
+    // setTaskName("");
   };
 
   const get_Task_details = (taskId: number) => {
@@ -92,7 +92,7 @@ function App() {
               className="rounded-full bg-[#3556AB] border-2 border-[#123EB1] w-[60px] shadow-md h-[61px]  text-center text-white text-[30px] inner-shadow custom-shadow "
               onClick={() => {
                 setOption("new task");
-                setTaskName("");
+                // setTaskName("");
                 setEditTasksValue({
                   id: 0,
                   name: "",

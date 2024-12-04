@@ -3,7 +3,15 @@
 @tailwind utilities;
 
 .custom-shadow {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 3px 1px rgba(0, 0, 0, 1);
+}
+
+.inner-shadow {
+  box-shadow: inset 1px 1px 1px #fdfbfb4d;
+}
+
+.inner-shadow-black {
+  box-shadow: inset 2px 2px 10px #2c2b2b4d;
 }
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

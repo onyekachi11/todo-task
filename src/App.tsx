@@ -8,6 +8,7 @@ import Upgrade from "./components/upgrade";
 interface Edit {
   id: number;
   name: string;
+  checked: false;
 }
 
 function App() {
@@ -18,24 +19,28 @@ function App() {
     {
       id: 1,
       name: "Task 1",
+      checked: false,
     },
     {
       id: 2,
       name: "Task 2",
+      checked: false,
     },
   ]);
 
   const [editTasksValue, setEditTasksValue] = useState<Edit>({
     id: 0,
     name: "",
+    checked: false,
   });
 
   const add_new_task = (name: string) => {
-    const newTask = { id: Date.now(), name };
+    const newTask = { id: Date.now(), name, checked: false };
     setTask([...task, newTask]);
     setEditTasksValue({
       id: 0,
-      name: "Task 1",
+      name: "",
+      checked: false,
     });
     setTaskName("");
   };
@@ -44,7 +49,7 @@ function App() {
     setOption("edit task");
     const taskToEdit = task.find((task) => task.id === taskId);
     if (taskToEdit) {
-      setEditTasksValue(taskToEdit);
+      setEditTasksValue(taskToEdit as Edit);
     } else {
       console.error(`Task with ID ${taskId} not found.`);
     }
@@ -58,6 +63,7 @@ function App() {
     setEditTasksValue({
       id: 0,
       name: "",
+      checked: false,
     });
   };
 
@@ -73,19 +79,24 @@ function App() {
             <Upgrade />
             <div className="h-[70%]  overflow-scroll  ">
               <div className=" overflow-scroll">
-                <Tasks task={task} get_Task_details={get_Task_details} />
+                <Tasks
+                  task={task}
+                  get_Task_details={get_Task_details}
+                  setTask={setTask}
+                />
               </div>
             </div>
           </div>
           <div className="flex items-end justify-end p-4 h-[10%]  ">
             <button
-              className="rounded-full bg-[#3556AB] border-[#123EB1] w-[60px] shadow-md h-[61px]  text-center text-white text-[30px] custom-shadow "
+              className="rounded-full bg-[#3556AB] border-2 border-[#123EB1] w-[60px] shadow-md h-[61px]  text-center text-white text-[30px] inner-shadow custom-shadow "
               onClick={() => {
                 setOption("new task");
                 setTaskName("");
                 setEditTasksValue({
                   id: 0,
                   name: "",
+                  checked: false,
                 });
               }}
             >

@@ -3,7 +3,7 @@ import ProfileImage from "../assets/profile_img.png";
 
 const Header = () => {
   return (
-    <div className="bg-[#3556AB] p-5 flex gap-4 items-start">
+    <div className="bg-[#3556AB] p-5 flex gap-4 items-start shadow-blue-950 h-[150px]">
       <img src={ProfileImage} alt="Profile Image" />
       <div className="text-white">
         <p className="font-normal custom-shadow">Hello, John</p>

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
